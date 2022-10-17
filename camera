@@ -1,0 +1,10 @@
+#import timport ime and picamera library
+from time import sleep
+from picamera import PiCamera
+camera=PiCamera()
+
+camera.resolution=(1080,1920)
+camera.start_preview()
+sleep(10)
+camera.capture('/home/pi/Pictures/random.jpg')
+camera.stop_preview()
