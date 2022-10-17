@@ -1,0 +1,21 @@
+import RPi.GPIO as GPIO
+from time import sleep
+
+GPIO.setmode(GPIO.BOARD)
+
+ledPin = 15 #board pin
+GPIO.setup(ledPin, GPIO.OUT)
+GPIO.output(ledPin, False)
+
+try:
+    while True:
+        GPIO.output(ledPin, True)
+        print("Led On")
+        sleep(1)
+        GPIO.output(ledPin, False)
+        print("Led Off")
+        sleep(1)
+finally:
+    GPIO.output(ledPin, False)
+    GPIO.cleanup()
+        
